@@ -1,0 +1,30 @@
+# Project Configuration
+
+# Data paths
+data:
+  raw_data_path: "data/raw"
+  processed_data_path: "data/processed"
+  results_path: "data/results"
+
+# Training parameters
+training:
+  batch_size: 4
+  learning_rate: 1e-4
+  num_epochs: 100
+  save_interval: 10
+
+# Model parameters
+model:
+  pretrained_model: "AnimateDiff-v1"
+  temporal_layers: 8
+  motion_bucket_size: 32
+  
+# Evaluation metrics
+evaluation:
+  metrics:
+    - temporal_consistency
+    - motion_smoothness
+    - frame_coherence
+  baseline_models:
+    - "stable-diffusion"
+    - "text2video" 
