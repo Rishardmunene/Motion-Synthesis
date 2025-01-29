@@ -12,6 +12,7 @@ training:
   learning_rate: 1e-4
   num_epochs: 100
   save_interval: 10
+  steps_per_epoch: 100
 
 # Model parameters
 model:
@@ -27,4 +28,12 @@ evaluation:
     - frame_coherence
   baseline_models:
     - "stable-diffusion"
-    - "text2video" 
+    - "text2video"
+
+# Model configuration
+hidden_dim: 512
+num_temporal_layers: 3
+
+# Regularization defaults
+temporal_weight: 0.1
+motion_weight: 0.05 
